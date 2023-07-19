@@ -63,6 +63,7 @@
 \usepackage{paralist} % for \begin{compactitem}
 
 
+\usepackage{scrhack} % included because \float@listhead is not supported anymore http://www.bakoma-tex.com/doc/latex/koma-script/scrhack.pdf page 3
 \usepackage{listings}
 \lstset{
     basicstyle=\footnotesize, % Global Code Style
@@ -82,7 +83,7 @@
 %\usepackage{color}
 %\include{listingsstyls}
 
-\usepackage{etex}
+%\usepackage{etex} % etex package is obsolete according to https://tex.stackexchange.com/a/186597/52414
 % \#TODO: Entscheiden welchen Style
 %\bibliographystyle{ieeetr} % ist ohne den Strich
 %\bibliographystyle{IEEETran} % ist mit dem Strich, dafür ausführlicher
@@ -95,11 +96,13 @@
 \usepackage{float}
 \usepackage[abs]{overpic} % Für Unterschrift
 
-\usepackage[binary-units = true ]{siunitx}
+%\usepackage[binary-units = true ]{siunitx} % option binary-units has been removed https://github.com/josephwright/siunitx/blob/main/CHANGELOG.md#removed
+\usepackage{siunitx}
 %\sisetup{scientific-notation = true} % Wissenschaftliche Notation
 \sisetup{exponent-product = \cdot}
-\sisetup{output-product = \cdot} % Das Punkt statt X
-\sisetup{binary-units=true}
+%\sisetup{output-product = \cdot} % Das Punkt statt X % option output-product got replaced with option product-symbol https://texdoc.org/serve/siunitx/0 page 34
+\sisetup{product-symbol= \ensuremath{\cdot}}
+%\sisetup{binary-units=true}
 \sisetup{output-decimal-marker = {,}}
 \sisetup{detect-all} 	% Einstellung das Front für SI gleich Standardfront
 \sisetup{per-mode = symbol}
