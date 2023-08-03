@@ -23,7 +23,7 @@ Neben der Richtung eines endpoints, IN oder OUT, werden vier Übertragungsarten 
     \item \textbf{bulk transfer} Für die Übertragung grö{\ss}er Datenmengen ohne zugesicherten Geschwindigkeit oder Latenz über eine data pipe ohne Datenverluste.
     \item \textbf{isochronous transfer}  Für Übertragungen mit zugesicherten Übertragungskapazität über eine data pipe ohne Fehlerbehebung.
 \end{compactitem}
-Welche Übertragungsarten ein Gerät unterstützt, und damit über welche endpoints es verfügt kann frei gewählt werden oder kann einer %\acrshort{ubs} Klassen Spezifikation folgen. Eine solche Spezifikation definiert neben dem Aufbau der endpoints weiter einheitliche Funktionen damit Geräte, einer gleichen Klasse, problemlos ausgetauscht werden können.
+Welche Übertragungsarten ein Gerät unterstützt, und damit über welche endpoints es verfügt kann frei gewählt werden oder kann einer \acrshort{usb} Klassen Spezifikation folgen. Eine solche Spezifikation definiert neben dem Aufbau der endpoints weiter einheitliche Funktionen damit Geräte, einer gleichen Klasse, problemlos ausgetauscht werden können. % typo (ubs instead of usb)
 
 Softwareseitig wird die Übertragung in drei Ebenen unterteilt, diese sind in \autoref{fig:usb_schnittstellen_abstraktion} abgebildet.
 \begin{figure}[h]
@@ -44,7 +44,7 @@ Die \acrshort{usb} Spezifikation definiert vier Arten von endpoints mit der maxi
     \item \textbf{control endpoint} für control Transfers und muss in jedem Gerät vorhanden sein, um Geräteinformation zu übertragen. Die Übertragung sind fehlerbehebend und können, bei High-Speed, bis zu 10\% der Buslast einnehmen.
 \end{compactitem}
 
-Im  device descriptor werden allgemeine Informationen für ein Gerät bereitgestellt, die Datenfelder sind in \autoref{tab:ubs_device_descriptor} aufgetragen.
+Im  device descriptor werden allgemeine Informationen für ein Gerät bereitgestellt, die Datenfelder sind in \autoref{tab:usb_device_descriptor} aufgetragen. % typo (ubs instead of usb)
 \begin{table}[h]
     \centering
     \begin{tabular}{|l|l|}
@@ -65,7 +65,7 @@ Im  device descriptor werden allgemeine Informationen für ein Gerät bereitgest
         \hline
         bMaxPacketSize     & Maximale Packet Größe für endpoint 0               \\
         \hline
-        idVendor           & \acrfull{vid}, vergeben durch \acrshort{usbif})        \\
+        idVendor           & \acrfull{vid}, vergeben durch \acrshort{usbif}        \\ % typo
         \hline
         idProduct          & \acrfull{produkt_id}, vergeben durch den Hersteller   \\
         \hline
@@ -84,3 +84,12 @@ Im  device descriptor werden allgemeine Informationen für ein Gerät bereitgest
     \label{tab:usb_device_descriptor} % #TODO Offset und Size entfernen
 \end{table}
 
+
+% added subsections to avoid warnings because of references in line 39 and line 41
+\subsubsection{Konfigurationsvorgang} \label{sssec:Konfigurationsvorgang}
+
+\acrshort{usb} Konfigurationsvorgang
+
+\subsubsection{USB Überblick} \label{sssec:usb_ueberblick}
+
+\acrshort{usb} Überblick
